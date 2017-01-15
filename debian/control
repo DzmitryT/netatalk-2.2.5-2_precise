@@ -1,0 +1,56 @@
+Source: netatalk
+Section: net
+Priority: extra
+Maintainer: Debian Netatalk team <pkg-netatalk-devel@lists.alioth.debian.org>
+Uploaders: Jonas Smedegaard <dr@jones.dk>,
+ Brian Campbell <brian.campbell@editshare.com>,
+ Chris Boot <debian@bootc.net>
+Build-Depends: cdbs,
+ autotools-dev,
+ devscripts,
+ debhelper,
+ dh-buildinfo,
+ libdb-dev,
+ libwrap0-dev,
+ libpam0g-dev,
+ libcups2-dev,
+ libkrb5-dev,
+ libltdl3-dev,
+ libgcrypt11-dev,
+ libcrack2-dev,
+ libavahi-client-dev,
+ libldap2-dev,
+ libacl1-dev
+Build-Conflicts: libavahi-compat-libdnssd-dev
+Vcs-Git: git://anonscm.debian.org/pkg-netatalk/netatalk.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-netatalk/netatalk.git
+Standards-Version: 3.9.8
+Homepage: http://netatalk.sourceforge.net/
+
+Package: netatalk
+Architecture: any
+Depends: ${shlibs:Depends}, ${perl:Depends}, ${misc:Depends}, ${cdbs:Depends}
+Recommends: ${cdbs:Recommends}
+Suggests: ${cdbs:Suggests}
+Description: AppleTalk user binaries
+ Netatalk is an implementation of the AppleTalk Protocol Suite for
+ BSD-derived systems.  The current release contains support for
+ EtherTalk Phase I and II, DDP, RTMP, NBP, ZIP, AEP, ATP, PAP, ASP, and
+ AFP.
+ .
+ This package contains all daemon and utility programs as well as Netatalk's
+ static libraries.
+
+Package: netatalk-dbg
+Section: debug
+Architecture: any
+Depends:
+ netatalk (= ${binary:Version}),
+ ${misc:Depends}
+Description: Debug symbols for netatalk
+ Netatalk is an implementation of the AppleTalk Protocol Suite for
+ BSD-derived systems.  The current release contains support for
+ EtherTalk Phase I and II, DDP, RTMP, NBP, ZIP, AEP, ATP, PAP, ASP, and
+ AFP.
+ .
+ This package contains the debugging symbols for Netatalk.
