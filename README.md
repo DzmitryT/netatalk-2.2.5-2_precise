@@ -5,12 +5,16 @@ First of all, you can ask me "Why?". I've running Ubuntu 12.04 LTS (Precise) on 
 
     # apt-cache policy  netatalk
 ```netatalk:
-  Installed: 2.2.5-2
-  Candidate: 2.2.5-2
+  Installed: 2.2.5-2ubuntu12.04
+  Candidate: 2.2.5-2ubuntu12.04
   Version table:
- *** 2.2.5-2 0
+ *** 2.2.5-2ubuntu12.04 0
         100 /var/lib/dpkg/status
      2.2.1-1 0
         500 http://ru.archive.ubuntu.com/ubuntu/ precise/universe amd64 Packages
 ```
-Actual sources of the **3.1.10**  version are currently available at the SourceForge and "debianized" version **2.2.5-2** can be found at the [Launchpad](https://launchpad.net/ubuntu/+source/netatalk). In my case, I want to build ***.deb** package from "debianized" sources available for **Zesty**. All we needed is to fix build dependencies at the **debian/control** file. Why? Because of the package names changes between Ubuntu releases and **licensecheck** has been moved from **devscripts** (Xenial and early) to it's own separate  **licensecheck** package (Yakkety and above).
+Actual sources of the **3.1.10**  version are currently available at the SourceForge and "debianized" version **2.2.5-2** can be found at the [Launchpad](https://launchpad.net/ubuntu/+source/netatalk). In my case, I want to build ***.deb** package from "debianized" sources available for **Zesty**. All we needed is to fix build dependencies at the **debian/control** file. Why? Because of the package names changes between Ubuntu releases and **licensecheck** has been moved from **devscripts** (Xenial and early) to it's own separate  **licensecheck** package (Yakkety and above). Also, you can use *dch -i*  at the source code tree directory or edit **debian/changelog** via prefered text editor to customize package version i.e. **2.2.5-2ubuntu12.04**.
+Prebuilt packege can be found at the **deb** directory. My custom **control** config is provided at the **debian** directory. 
+
+Sorry for my terrible english. I've tried to check spelling via google-translator and I want to believe that this manual is more or less understandable)) 
+Regards, Dzmitry.
